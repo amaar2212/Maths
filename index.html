@@ -228,7 +228,15 @@ color:black;
 <button onclick="mul()">Multiply</button>
 
 <button onclick="div()">Divide</button>
+<button onclick="power()">Power</button>
 
+<button onclick="squareRoot()">√ Root</button>
+
+<button onclick="sinValue()">Sin</button>
+
+<button onclick="cosValue()">Cos</button>
+
+<button onclick="tanValue()">Tan</button>
 <h3 id="result">Result:</h3>
 
 </div>
@@ -258,7 +266,31 @@ let a = Number(document.getElementById("num1").value);
 let b = Number(document.getElementById("num2").value);
 document.getElementById("result").innerHTML = "Result: " + (a/b);
 }
+function power(){
+let a = Number(document.getElementById("num1").value);
+let b = Number(document.getElementById("num2").value);
+document.getElementById("result").innerHTML = "Result: " + (a ** b);
+}
 
+function squareRoot(){
+let a = Number(document.getElementById("num1").value);
+document.getElementById("result").innerHTML = "Result: " + Math.sqrt(a);
+}
+
+function sinValue(){
+let a = Number(document.getElementById("num1").value);
+document.getElementById("result").innerHTML = "Result: " + Math.sin(a);
+}
+
+function cosValue(){
+let a = Number(document.getElementById("num1").value);
+document.getElementById("result").innerHTML = "Result: " + Math.cos(a);
+}
+
+function tanValue(){
+let a = Number(document.getElementById("num1").value);
+document.getElementById("result").innerHTML = "Result: " + Math.tan(a);
+  }
 </script>
 </body>
 
