@@ -116,19 +116,29 @@ Already have account? Login
 
 </div>
 
-<script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBpfQmob7PLM_2UiDay3WBgPy8t7QJFiP8",
+  authDomain: "math-formula-hub-c015d.firebaseapp.com",
+  projectId: "math-formula-hub-c015d",
+  storageBucket: "math-formula-hub-c015d.firebasestorage.app",
+  messagingSenderId: "838477107885",
+  appId: "1:838477107885:web:b07343348b2d6eaf41ec24"
+};
+
+const app = initializeApp(firebaseConfig);
 
 function showSignup(){
-  document.getElementById("login-box").style.display="none";
-  document.getElementById("signup-box").style.display="block";
+ document.getElementById("login-box").style.display="none";
+ document.getElementById("signup-box").style.display="block";
 }
 
 function showLogin(){
-  document.getElementById("signup-box").style.display="none";
-  document.getElementById("login-box").style.display="block";
+ document.getElementById("signup-box").style.display="none";
+ document.getElementById("login-box").style.display="block";
 }
 
 </script>
-
-</body>
-</html>
