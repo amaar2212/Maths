@@ -203,7 +203,63 @@ border-radius:15px;
 </div>
 
   
+<div style="
+background:white;
+padding:20px;
+border-radius:20px;
+width:90%;
+margin:auto;
+margin-bottom:30px;
+color:black;
+">
 
+<h2>🧮 Calculator</h2>
+
+<input type="number" id="num1" placeholder="First Number" style="padding:10px; width:40%;">
+
+<input type="number" id="num2" placeholder="Second Number" style="padding:10px; width:40%;">
+
+<br><br>
+
+<button onclick="add()">Add</button>
+
+<button onclick="sub()">Subtract</button>
+
+<button onclick="mul()">Multiply</button>
+
+<button onclick="div()">Divide</button>
+
+<h3 id="result">Result:</h3>
+
+</div>
+
+<script>
+
+function add(){
+let a = Number(document.getElementById("num1").value);
+let b = Number(document.getElementById("num2").value);
+document.getElementById("result").innerHTML = "Result: " + (a+b);
+}
+
+function sub(){
+let a = Number(document.getElementById("num1").value);
+let b = Number(document.getElementById("num2").value);
+document.getElementById("result").innerHTML = "Result: " + (a-b);
+}
+
+function mul(){
+let a = Number(document.getElementById("num1").value);
+let b = Number(document.getElementById("num2").value);
+document.getElementById("result").innerHTML = "Result: " + (a*b);
+}
+
+function div(){
+let a = Number(document.getElementById("num1").value);
+let b = Number(document.getElementById("num2").value);
+document.getElementById("result").innerHTML = "Result: " + (a/b);
+}
+
+</script>
 </body>
 
 </html>
