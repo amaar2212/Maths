@@ -274,7 +274,58 @@ border-radius:15px;
 </div>
 
 </div>
+<h1 style="
+color:white;
+text-align:center;
+margin-top:40px;
+font-size:45px;
+text-shadow:0 0 20px cyan;
+">
+🤖 AI MATH SOLVER
+</h1>
 
+<div style="
+background:white;
+padding:25px;
+border-radius:20px;
+width:90%;
+margin:auto;
+margin-bottom:30px;
+color:black;
+text-align:center;
+">
+
+<input type="text" id="question"
+placeholder="Enter math question..."
+style="
+width:95%;
+padding:15px;
+font-size:20px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-bottom:20px;
+">
+
+<br><br>
+
+<button onclick="solveMath()" style="
+padding:15px 30px;
+font-size:20px;
+background:#243b55;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+">
+Solve
+</button>
+
+<h2 id="answer" style="
+margin-top:20px;
+color:#243b55;
+"></h2>
+
+</div>
 <div style="
 background:white;
 padding:20px;
@@ -339,6 +390,8 @@ gap:10px;
 
 </div>
 </div>
+
+
 <h1 style="
 color:white;
 text-align:center;
@@ -456,6 +509,24 @@ gap:20px;
   </div>
 <script>
 
+
+function solveMath(){
+
+let q = document.getElementById("question").value;
+
+try{
+document.getElementById("answer").innerHTML =
+"Answer: " + eval(q);
+}
+
+catch{
+document.getElementById("answer").innerHTML =
+"Invalid Question";
+}
+
+}
+
+function press(val){
 function press(val){
 document.getElementById("display").value += val;
 }
