@@ -138,7 +138,19 @@ const firebaseConfig = {
   messagingSenderId: "838477107885",
   appId: "1:838477107885:web:8a6038b666efd9e241ec24"
 };
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
+
+window.loginGoogle = async function () {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    alert("Welcome " + result.user.displayName);
+  } catch (error) {
+    alert(error.message);
+  }
+  }
 initializeApp(firebaseConfig);
 </script>
 </body>
