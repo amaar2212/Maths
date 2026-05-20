@@ -89,7 +89,35 @@ margin-right:10px !important;
 padding:10px !important;
 }
 
-  }
+  } .main-content{
+margin-left:80px !important;
+margin-right:10px !important;
+padding:10px !important;
+}
+
+}
+
+/* YAHAN ADD KARO */
+
+@media screen and (max-width:768px){
+
+body{
+overflow-x:hidden;
+}
+
+.right-sidebar{
+display:none;
+}
+
+.main-content{
+margin-left:80px !important;
+margin-right:10px !important;
+padding:10px !important;
+}
+
+}
+
+</style>
 </style>
 </head>
 
@@ -122,7 +150,9 @@ margin:12px;
 background:#1e293b;
 border-radius:12px;
 ">
+<a href="#trigonometry" style="text-decoration:none; color:white;">
 📘 Trigonometry
+</a>
 </div>
 
 <div style="
@@ -184,8 +214,10 @@ border-radius:15px;
 margin-top:20px;
 color:white;
 text-align:center;
-">
+"> 
+<a href="#aisolver" style="text-decoration:none; color:white;">
 🤖 AI Solver
+</a>
 </div>
 
 <div style="
@@ -195,8 +227,10 @@ border-radius:15px;
 margin-top:20px;
 color:white;
 text-align:center;
-">
+"> 
+<a href="#calculator" style="text-decoration:none; color:white;">
 🧮 Calculator
+</a>
 </div>
 
 </div>
@@ -276,7 +310,7 @@ animation:load 3s linear;
 </style>   
 <div class="main-content"style="
 margin-left:240px;
-margin-right:280px
+margin-right:200px
 padding:20px;
 ">
 <h1 style="
@@ -284,7 +318,7 @@ color:white;
 text-align:center;
 padding:20px;
 font-size:40px;
-">
+"> <div id="trigonometry">
 📘 Trigonometry Formula Hub
 </h1>
 
@@ -411,7 +445,7 @@ text-align:center;
 margin-top:40px;
 font-size:45px;
 text-shadow:0 0 20px cyan;
-"> <!-- ===== AI SOLVER START ===== -->
+"> <!-- ===== AI SOLVER START ===== --> <div id="aisolver">
 🤖 AI MATH SOLVER
 </h1>
 
@@ -468,7 +502,7 @@ color:black;
 text-align:center;
 box-shadow:0 0 20px rgba(0,0,0,0.2);
 ">
-
+<div id="calculator">
 <h2>🧮 Real Scientific Calculator</h2>
 
 <input type="text" id="display" readonly
