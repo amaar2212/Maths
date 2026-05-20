@@ -235,7 +235,27 @@ document.getElementById('calculator').style.display='block';
 🧮 Calculator
 </a>
 </div>
+<div style="
+background:#1e293b;
+padding:15px;
+border-radius:15px;
+margin-top:20px;
+color:white;
+text-align:center;
+">
 
+<a href="#aichat" onclick="
+document.getElementById('trigonometry').style.display='none';
+document.getElementById('aisolver').style.display='none';
+document.getElementById('calculator').style.display='none';
+document.getElementById('aichat').style.display='block';
+" style="text-decoration:none; color:white;">
+
+🤖 AI Chat
+
+</a>
+
+</div>
 </div>
 <div id="loader" style="
 position:fixed;
@@ -675,18 +695,82 @@ document.getElementById("loader").style.display="none";
 </div>
 
 
+<div id="aichat">
+
+AI Chat ka pura code
+
+</div>
+
 <script>
+
+function askAI(){
+
+let question =
+document.getElementById("userInput").value;
+
+document.getElementById("aiResponse").innerHTML =
+"You asked: " + question;
+
+}
+
+</script>
 
 function showSection(sectionId){
 
 document.getElementById("trigonometry").style.display="none";
 document.getElementById("aisolver").style.display="none";
 document.getElementById("calculator").style.display="none";
-
+document.getElementById("aichat").style.display="none";
 document.getElementById(sectionId).style.display="block";
 
-}
+} function askAI(){
 
+let question =
+document.getElementById("userInput").value;
+
+document.getElementById("aiResponse").innerHTML =
+"You asked: " + question;
+
+  }
+ style="display:none; padding:20px;">
+
+<h2 style="color:white;">🤖 AI Chat</h2>
+
+<input 
+type="text" 
+id="userInput"
+placeholder="Question likho..."
+style="
+width:90%;
+padding:15px;
+border-radius:10px;
+border:none;
+margin-top:20px;
+">
+
+<button onclick="askAI()" style="
+padding:15px;
+margin-top:20px;
+width:200px;
+background:cyan;
+border:none;
+border-radius:10px;
+font-size:18px;
+">
+Ask AI
+</button>
+
+<div id="aiResponse" style="
+margin-top:20px;
+background:white;
+padding:20px;
+border-radius:10px;
+color:black;
+">
+AI Answer yahan aayega
+</div>
+
+</div>
 </script>
 </body>
 </html>
