@@ -69,13 +69,33 @@ button:hover{
 #signup-box{
   display:none;
 }
+@media screen and (max-width:768px){
 
+body{
+overflow-x:hidden;
+}
+
+.left-sidebar{
+width:70px !important;
+}
+
+.right-sidebar{
+display:none;
+}
+
+.main-content{
+margin-left:80px !important;
+margin-right:10px !important;
+padding:10px !important;
+}
+
+  }
 </style>
 </head>
 
 <body style="margin:0; font-family:Arial; background:linear-gradient(to right,#141e30,#243b55);"> 
 <!-- ================= LEFT SIDEBAR ================= -->
-<div style="
+<div class="left-sidebar"style="
 width:220px;
 height:100vh;
 background:linear-gradient(to bottom,#0f172a,#1e293b);
@@ -139,8 +159,8 @@ border-radius:12px;
 
 <!-- ================= RIGHT PANEL ================= -->
 
-<div style="
-width:260px;
+<div class="right-sidebar"style="
+width:200px;
 height:100vh;
 background:#111827;
 position:fixed;
@@ -254,7 +274,7 @@ animation:load 3s linear;
 }
 <!-- ===== HERO SECTION START ===== -->
 </style>   
-<div style="
+<div class="main-content"style="
 margin-left:240px;
 margin-right:280px
 padding:20px;
