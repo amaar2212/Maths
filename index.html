@@ -330,7 +330,7 @@ color:white;
 text-align:center;
 padding:20px;
 font-size:40px;
-"> <div id="trigonometry">
+"> <div id="trigonometry" style="display:none;">
 📘 Trigonometry Formula Hub
 </h1>
 
@@ -761,6 +761,18 @@ document.getElementById("calculator").style.display = "none";
 document.getElementById(id).style.display = "block";
 }
 </script>
+<script>
 
+function showSection(sectionId){
+
+document.getElementById("trigonometry").style.display="none";
+document.getElementById("aisolver").style.display="none";
+document.getElementById("calculator").style.display="none";
+
+document.getElementById(sectionId).style.display="block";
+
+}
+
+</script>
 </body>
 </html>
