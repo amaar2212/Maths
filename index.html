@@ -150,7 +150,11 @@ margin:12px;
 background:#1e293b;
 border-radius:12px;
 ">
-<a href="#trigonometry" style="text-decoration:none; color:white;">
+<a href="#trigonometry" onclick="
+document.getElementById('trigonometry').style.display='block';
+document.getElementById('aisolver').style.display='none';
+document.getElementById('calculator').style.display='none';
+" style="text-decoration:none; color:white;">
 📘 Trigonometry
 </a>
 </div>
@@ -215,7 +219,11 @@ margin-top:20px;
 color:white;
 text-align:center;
 "> 
-<a href="#aisolver" style="text-decoration:none; color:white;">
+<a href="#aisolver" onclick="
+document.getElementById('trigonometry').style.display='none';
+document.getElementById('aisolver').style.display='block';
+document.getElementById('calculator').style.display='none';
+" style="text-decoration:none; color:white;">
 🤖 AI Solver
 </a>
 </div>
@@ -228,7 +236,11 @@ margin-top:20px;
 color:white;
 text-align:center;
 "> 
-<a href="#calculator" style="text-decoration:none; color:white;">
+<a href="#calculator" onclick="
+document.getElementById('trigonometry').style.display='none';
+document.getElementById('aisolver').style.display='none';
+document.getElementById('calculator').style.display='block';
+" style="text-decoration:none; color:white;">
 🧮 Calculator
 </a>
 </div>
@@ -444,8 +456,8 @@ color:white;
 text-align:center;
 margin-top:40px;
 font-size:45px;
-text-shadow:0 0 20px cyan;
-"> <!-- ===== AI SOLVER START ===== --> <div id="aisolver">
+text-shadow:0 0 20px cyan; </div>
+"> <!-- ===== AI SOLVER START ===== --> <div id="aisolver" style="display:none;">
 🤖 AI MATH SOLVER
 </h1>
 
@@ -502,7 +514,7 @@ color:black;
 text-align:center;
 box-shadow:0 0 20px rgba(0,0,0,0.2);
 ">
-<div id="calculator">
+<div id="calculator" style="display:none;">
 <h2>🧮 Real Scientific Calculator</h2>
 
 <input type="text" id="display" readonly
@@ -736,8 +748,19 @@ document.getElementById("display").value = Math.tan(val);
 setTimeout(function(){
 document.getElementById("loader").style.display="none";
 },3000);
-  </script>  
+  </script>
 </div>
-</body>
 
+<script>
+function showSection(id) {
+
+document.getElementById("trigonometry").style.display = "none";
+document.getElementById("aisolver").style.display = "none";
+document.getElementById("calculator").style.display = "none";
+
+document.getElementById(id).style.display = "block";
+}
+</script>
+
+</body>
 </html>
