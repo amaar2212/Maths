@@ -330,44 +330,8 @@ animation:load 3s linear;
 100%{width:100%;}
 }
 <!-- ===== HERO SECTION START ===== -->
-</style>   <div style="
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-padding:20px;
-">
+</style>   
 
-<div onclick="showSection('trigonometry')" style="
-background:white;
-border-radius:20px;
-padding:30px;
-text-align:center;
-font-size:22px;
-">
-📘<br><br>Trigonometry
-</div>
-
-<div onclick="showSection('calculator')" style="
-background:white;
-border-radius:20px;
-padding:30px;
-text-align:center;
-font-size:22px;
-">
-🧮<br><br>Calculator
-</div>
-
-<div onclick="showSection('aisolver')" style="
-background:white;
-border-radius:20px;
-padding:30px;
-text-align:center;
-font-size:22px;
-">
-🤖<br><br>AI Solver
-</div>
-
-</div>
 <div class="main-content"style="
 margin-left:130px;
 margin-right:230px;
@@ -379,7 +343,7 @@ color:white;
 text-align:center;
 padding:20px;
 font-size:40px;
-"> <div id="trigonometry" style="display:none;">
+"> <div id="trigonometry" style="display:block;">
 📘 Trigonometry Formula Hub
 </h1>
 
@@ -697,9 +661,43 @@ document.getElementById("loader").style.display="none";
 </div>
 
 
-<div id="aichat">
+<div id="aichat" style="display:none; padding:20px;">
 
-AI Chat ka pura code
+<h2 style="color:white;">🤖 AI Chat</h2>
+
+<input type="text" id="userInput"
+placeholder="Question likho..."
+style="
+width:90%;
+padding:15px;
+border-radius:10px;
+border:none;
+">
+
+<br><br>
+
+<button onclick="askAI()"
+style="
+padding:15px;
+width:200px;
+background:cyan;
+border:none;
+border-radius:10px;
+font-size:18px;
+">
+Ask AI
+</button>
+
+<div id="aiResponse"
+style="
+margin-top:20px;
+background:white;
+padding:20px;
+border-radius:10px;
+color:black;
+">
+AI Answer yahan aayega
+</div>
 
 </div>
 
