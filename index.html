@@ -779,6 +779,53 @@ color:black;
 AI Answer yahan aayega
 </div>
 
+</div> 
+<div style="
+width:90%;
+margin:auto;
+margin-bottom:20px;
+">
+<input
+type="text"
+id="searchBar"
+placeholder="🔍 Search Formula..."
+onkeyup="searchFormula()"
+style="
+width:100%;
+padding:15px;
+border-radius:10px;
+border:none;
+font-size:18px;
+">
+
+<script>
+function searchFormula() {
+
+let input =
+document.getElementById("searchBar").value.toLowerCase();
+
+let content =
+document.body.innerText.toLowerCase();
+
+if(content.includes(input)){
+
+console.log("Found");
+
+}
+
+}
+</script>
+
+type="text"
+placeholder="🔍 Search Formula..."
+style="
+width:100%;
+padding:15px;
+border-radius:10px;
+border:none;
+font-size:18px;
+">
+
 </div>
 </script>
 </body>
