@@ -158,8 +158,6 @@ background:#1e293b;
 border-radius:12px;
 ">
 📗 Algebra
-</div>
-
 <div style="
 color:white;
 padding:15px;
@@ -167,6 +165,24 @@ margin:12px;
 background:#1e293b;
 border-radius:12px;
 ">
+
+<a href="#algebra" onclick="
+document.getElementById('trigonometry').style.display='none';
+document.getElementById('algebra').style.display='block';
+document.getElementById('aisolver').style.display='none';
+document.getElementById('calculator').style.display='none';
+document.getElementById('aichat').style.display='none';
+" style="
+text-decoration:none;
+color:white;
+">
+
+📗 Algebra
+
+</a>
+
+</div>
+
 📕 Geometry
 </div>
 
@@ -485,6 +501,29 @@ text-align:center;
 margin-top:40px;
 font-size:45px;
 text-shadow:0 0 20px cyan; </div>
+<div id="algebra" style="
+display:none;
+width:90%;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:20px;
+margin-bottom:30px;
+color:black;
+text-align:center;
+">
+
+<h2 style="color:#243b55;">
+📗 Algebra Formulas
+</h2>
+
+<img src="YOUR_IMAGE_LINK"
+style="
+width:100%;
+border-radius:15px;
+">
+
+</div>
 
 "> <!-- ===== AI SOLVER START ===== --> <div id="aisolver" style="display:none;">
 🤖 AI MATH SOLVER
