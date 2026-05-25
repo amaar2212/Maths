@@ -1,8 +1,13 @@
+<!-- ========================= -->
+<!-- AMAAR MATH HUB PREMIUM -->
+<!-- ========================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AMAAR MATH HUB</title>
 
 <style>
@@ -20,7 +25,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* LOADER */
+/* LOADING */
 
 #loader{
 position:fixed;
@@ -31,21 +36,21 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-z-index:9999;
+z-index:99999;
 }
 
-.loader-ring{
-width:220px;
-height:220px;
+.circle{
+width:230px;
+height:230px;
 border-radius:50%;
 border:6px solid rgba(255,255,255,0.1);
 border-top:6px solid #3b82f6;
-box-shadow:0 0 40px #3b82f6;
 animation:spin 2s linear infinite;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+box-shadow:0 0 50px #2563eb;
 }
 
 @keyframes spin{
@@ -54,56 +59,45 @@ transform:rotate(360deg);
 }
 }
 
-.loader-ring h1{
+.circle h1{
 font-size:40px;
 text-align:center;
-color:white;
-text-shadow:0 0 25px #3b82f6;
+color:#60a5fa;
+text-shadow:0 0 25px #60a5fa;
 }
 
-.loader-ring p{
-font-size:16px;
+.circle p{
 margin-top:10px;
 }
 
-/* TOP BAR */
+/* MOBILE BUTTON */
 
-.topbar{
+.mobile-btn{
+display:none;
 position:fixed;
-top:0;
-left:260px;
-right:260px;
-height:70px;
-background:#0f172a;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 20px;
-border-bottom:1px solid rgba(255,255,255,0.1);
-z-index:100;
-}
-
-.search{
-width:50%;
-padding:12px;
-border-radius:10px;
-border:none;
+top:15px;
+left:15px;
 background:#111827;
-color:white;
+padding:10px 15px;
+border-radius:10px;
+font-size:28px;
+z-index:999;
+cursor:pointer;
 }
 
 /* SIDEBAR */
 
 .sidebar{
 position:fixed;
-top:0;
 left:0;
+top:0;
 width:260px;
 height:100%;
 background:#0b1220;
 padding:20px;
 overflow:auto;
 border-right:1px solid rgba(255,255,255,0.1);
+z-index:500;
 }
 
 .logo{
@@ -116,9 +110,9 @@ text-shadow:0 0 20px #60a5fa;
 }
 
 .menu-title{
-margin-bottom:15px;
-color:#aaa;
 font-size:14px;
+color:#aaa;
+margin-bottom:15px;
 }
 
 .menu-item{
@@ -135,12 +129,12 @@ background:#2563eb;
 transform:translateX(5px);
 }
 
-/* RIGHT AI PANEL */
+/* RIGHT PANEL */
 
 .rightbar{
 position:fixed;
-top:0;
 right:0;
+top:0;
 width:260px;
 height:100%;
 background:#0b1220;
@@ -166,9 +160,9 @@ width:100%;
 padding:12px;
 border:none;
 border-radius:10px;
-margin-top:10px;
 background:#1e293b;
 color:white;
+margin-top:10px;
 }
 
 .ai-box button{
@@ -180,6 +174,32 @@ border-radius:10px;
 background:#2563eb;
 color:white;
 cursor:pointer;
+}
+
+/* TOPBAR */
+
+.topbar{
+position:fixed;
+left:260px;
+right:260px;
+top:0;
+height:75px;
+background:#0f172a;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:100;
+}
+
+.search{
+width:55%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#111827;
+color:white;
 }
 
 /* MAIN */
@@ -200,7 +220,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:30px;
-box-shadow:0 0 30px rgba(59,130,246,0.4);
+box-shadow:0 0 35px rgba(59,130,246,0.4);
 }
 
 .hero-left h1{
@@ -212,17 +232,18 @@ margin-bottom:15px;
 display:flex;
 gap:15px;
 margin-top:20px;
+flex-wrap:wrap;
 }
 
-.stat-card{
+.stat{
 background:rgba(255,255,255,0.1);
 padding:15px;
 border-radius:15px;
-text-align:center;
 min-width:90px;
+text-align:center;
 }
 
-/* TOPIC CARDS */
+/* CARDS */
 
 .grid{
 display:grid;
@@ -235,8 +256,8 @@ margin-bottom:30px;
 background:#111827;
 padding:20px;
 border-radius:20px;
-transition:0.3s;
 cursor:pointer;
+transition:0.3s;
 }
 
 .card:hover{
@@ -246,6 +267,28 @@ box-shadow:0 0 25px rgba(59,130,246,0.4);
 
 .card h2{
 margin-bottom:10px;
+}
+
+/* FORMULA SECTION */
+
+.section{
+background:#111827;
+padding:25px;
+border-radius:25px;
+margin-bottom:30px;
+display:none;
+}
+
+.section h1{
+margin-bottom:20px;
+}
+
+.formula{
+background:#1e293b;
+padding:18px;
+border-radius:15px;
+margin-bottom:15px;
+font-size:20px;
 }
 
 /* CALCULATOR */
@@ -262,21 +305,21 @@ padding:20px;
 font-size:28px;
 border:none;
 border-radius:12px;
-margin-bottom:20px;
 background:#1e293b;
 color:white;
+margin-bottom:20px;
 text-align:right;
 }
 
 .calc-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(5,1fr);
 gap:12px;
 }
 
 .calc-grid button{
 padding:18px;
-font-size:20px;
+font-size:18px;
 border:none;
 border-radius:12px;
 background:#1e293b;
@@ -291,24 +334,15 @@ background:#2563eb;
 
 /* MOBILE */
 
-.mobile-menu{
-display:none;
-position:fixed;
-top:15px;
-left:15px;
-font-size:30px;
-z-index:1000;
-background:#111827;
-padding:8px 15px;
-border-radius:10px;
-}
-
 @media(max-width:1000px){
+
+.mobile-btn{
+display:block;
+}
 
 .sidebar{
 left:-270px;
 transition:0.4s;
-z-index:999;
 }
 
 .sidebar.active{
@@ -316,12 +350,17 @@ left:0;
 }
 
 .rightbar{
-display:none;
+display:block;
+position:relative;
+width:100%;
+height:auto;
+border:none;
 }
 
 .topbar{
 left:0;
 right:0;
+padding-left:70px;
 }
 
 .main{
@@ -329,18 +368,9 @@ margin:0;
 padding-top:100px;
 }
 
-.mobile-menu{
-display:block;
-}
-
 .hero{
 flex-direction:column;
 text-align:center;
-}
-
-.stats{
-justify-content:center;
-flex-wrap:wrap;
 }
 
 }
@@ -354,7 +384,7 @@ flex-wrap:wrap;
 
 <div id="loader">
 
-<div class="loader-ring">
+<div class="circle">
 
 <h1>AMAAR<br>MATH HUB</h1>
 
@@ -364,9 +394,9 @@ flex-wrap:wrap;
 
 </div>
 
-<!-- MOBILE BUTTON -->
+<!-- MOBILE -->
 
-<div class="mobile-menu" onclick="toggleMenu()">
+<div class="mobile-btn" onclick="toggleMenu()">
 ☰
 </div>
 
@@ -382,15 +412,37 @@ AMAAR HUB
 MAIN MENU
 </div>
 
-<div class="menu-item">🏠 Dashboard</div>
-<div class="menu-item">📘 Trigonometry</div>
-<div class="menu-item">📗 Algebra</div>
-<div class="menu-item">📕 Geometry</div>
-<div class="menu-item">📙 Mensuration</div>
-<div class="menu-item">📊 Statistics</div>
-<div class="menu-item">📈 Calculus</div>
-<div class="menu-item">🧮 Real Calculator</div>
-<div class="menu-item">📉 Graph Plotter</div>
+<div class="menu-item" onclick="showSection('dashboard')">
+🏠 Dashboard
+</div>
+
+<div class="menu-item" onclick="showSection('trigonometry')">
+📘 Trigonometry
+</div>
+
+<div class="menu-item" onclick="showSection('algebra')">
+📗 Algebra
+</div>
+
+<div class="menu-item" onclick="showSection('geometry')">
+📕 Geometry
+</div>
+
+<div class="menu-item" onclick="showSection('mensuration')">
+📙 Mensuration
+</div>
+
+<div class="menu-item" onclick="showSection('statistics')">
+📊 Statistics
+</div>
+
+<div class="menu-item" onclick="showSection('calculus')">
+📈 Calculus
+</div>
+
+<div class="menu-item" onclick="showSection('calculatorSection')">
+🧮 Real Calculator
+</div>
 
 </div>
 
@@ -420,7 +472,7 @@ MAIN MENU
 
 <div class="ai-box">
 
-<h3>Search</h3>
+<h3>Smart Search</h3>
 
 <input type="text" placeholder="Search anything...">
 
@@ -428,9 +480,19 @@ MAIN MENU
 
 </div>
 
+<div class="ai-box">
+
+<h3>Quote</h3>
+
+<p>
+“The only way to learn mathematics is to do mathematics.”
+</p>
+
 </div>
 
-<!-- TOP BAR -->
+</div>
+
+<!-- TOPBAR -->
 
 <div class="topbar">
 
@@ -452,26 +514,26 @@ MAIN MENU
 
 <h1>Welcome Back 😄</h1>
 
-<p>Your Ultimate Mathematics Learning Platform 🚀</p>
+<p>Your Ultimate Mathematics Platform 🚀</p>
 
 <div class="stats">
 
-<div class="stat-card">
+<div class="stat">
 <h2>12</h2>
 <p>Topics</p>
 </div>
 
-<div class="stat-card">
+<div class="stat">
 <h2>245</h2>
 <p>Solved</p>
 </div>
 
-<div class="stat-card">
+<div class="stat">
 <h2>98%</h2>
 <p>Accuracy</p>
 </div>
 
-<div class="stat-card">
+<div class="stat">
 <h2>15</h2>
 <p>Day Streak</p>
 </div>
@@ -484,69 +546,149 @@ MAIN MENU
 
 </div>
 
-<!-- CARDS -->
+<!-- TOPICS -->
 
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="showSection('trigonometry')">
 <h2>📘 Trigonometry</h2>
-<p>Formulas, identities and equations.</p>
+<p>Identities and formulas.</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="showSection('algebra')">
 <h2>📗 Algebra</h2>
-<p>Polynomials and equations.</p>
+<p>Equations and polynomials.</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="showSection('geometry')">
 <h2>📕 Geometry</h2>
 <p>Shapes and theorems.</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="showSection('mensuration')">
 <h2>📙 Mensuration</h2>
 <p>Area and volume formulas.</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="showSection('statistics')">
 <h2>📊 Statistics</h2>
-<p>Mean, median and mode.</p>
+<p>Mean median mode.</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="showSection('calculus')">
 <h2>📈 Calculus</h2>
 <p>Derivatives and integrals.</p>
 </div>
 
 </div>
 
-<!-- CALCULATOR -->
+<!-- TRIGONOMETRY -->
 
-<div class="calculator">
+<div id="trigonometry" class="section">
+
+<h1>📘 Trigonometry</h1>
+
+<div class="formula">sinθ = Perpendicular / Hypotenuse</div>
+<div class="formula">cosθ = Base / Hypotenuse</div>
+<div class="formula">tanθ = Perpendicular / Base</div>
+<div class="formula">1 + tan²θ = sec²θ</div>
+<div class="formula">1 + cot²θ = cosec²θ</div>
+
+</div>
+
+<!-- ALGEBRA -->
+
+<div id="algebra" class="section">
+
+<h1>📗 Algebra</h1>
+
+<div class="formula">(a+b)² = a² + 2ab + b²</div>
+<div class="formula">(a-b)² = a² - 2ab + b²</div>
+<div class="formula">a²-b² = (a+b)(a-b)</div>
+
+</div>
+
+<!-- GEOMETRY -->
+
+<div id="geometry" class="section">
+
+<h1>📕 Geometry</h1>
+
+<div class="formula">Area of Circle = πr²</div>
+<div class="formula">Circumference = 2πr</div>
+
+</div>
+
+<!-- MENSURATION -->
+
+<div id="mensuration" class="section">
+
+<h1>📙 Mensuration</h1>
+
+<div class="formula">Volume of Sphere = 4/3πr³</div>
+<div class="formula">CSA of Cylinder = 2πrh</div>
+
+</div>
+
+<!-- STATISTICS -->
+
+<div id="statistics" class="section">
+
+<h1>📊 Statistics</h1>
+
+<div class="formula">Mean = Sum / Total Numbers</div>
+<div class="formula">Mode = Most repeated value</div>
+
+</div>
+
+<!-- CALCULUS -->
+
+<div id="calculus" class="section">
+
+<h1>📈 Calculus</h1>
+
+<div class="formula">d/dx(xⁿ)=nxⁿ⁻¹</div>
+<div class="formula">∫xⁿdx = xⁿ⁺¹/(n+1)</div>
+
+</div>
+
+<!-- SCIENTIFIC CALCULATOR -->
+
+<div id="calculatorSection" class="calculator">
 
 <input type="text" id="display">
 
 <div class="calc-grid">
 
+<button onclick="press('sin(')">sin</button>
+<button onclick="press('cos(')">cos</button>
+<button onclick="press('tan(')">tan</button>
+<button onclick="press('log(')">log</button>
+<button onclick="press('ln(')">ln</button>
+
 <button onclick="press('7')">7</button>
 <button onclick="press('8')">8</button>
 <button onclick="press('9')">9</button>
 <button onclick="press('/')">÷</button>
+<button onclick="press('sqrt(')">√</button>
 
 <button onclick="press('4')">4</button>
 <button onclick="press('5')">5</button>
 <button onclick="press('6')">6</button>
 <button onclick="press('*')">×</button>
+<button onclick="press('^')">xʸ</button>
 
 <button onclick="press('1')">1</button>
 <button onclick="press('2')">2</button>
 <button onclick="press('3')">3</button>
 <button onclick="press('-')">−</button>
+<button onclick="press('pi')">π</button>
 
 <button onclick="press('0')">0</button>
 <button onclick="press('.')">.</button>
 <button onclick="calculate()">=</button>
 <button onclick="press('+')">+</button>
+<button onclick="clearDisplay()">C</button>
 
 </div>
 
@@ -562,24 +704,54 @@ setTimeout(()=>{
 document.getElementById("loader").style.display="none";
 },3000);
 
-/* CALCULATOR */
-
-function press(val){
-document.getElementById("display").value += val;
-}
-
-function calculate(){
-let exp=document.getElementById("display").value;
-document.getElementById("display").value = eval(exp);
-}
-
 /* MOBILE MENU */
 
 function toggleMenu(){
 document.getElementById("sidebar").classList.toggle("active");
 }
 
+/* SHOW SECTION */
+
+function showSection(id){
+
+let sections=document.querySelectorAll(".section");
+
+sections.forEach(section=>{
+section.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+
+}
+
+/* CALCULATOR */
+
+function press(val){
+document.getElementById("display").value += val;
+}
+
+function clearDisplay(){
+document.getElementById("display").value="";
+}
+
+function calculate(){
+
+let exp=document.getElementById("display").value;
+
+exp=exp.replace(/sin/g,"Math.sin");
+exp=exp.replace(/cos/g,"Math.cos");
+exp=exp.replace(/tan/g,"Math.tan");
+exp=exp.replace(/sqrt/g,"Math.sqrt");
+exp=exp.replace(/log/g,"Math.log10");
+exp=exp.replace(/ln/g,"Math.log");
+exp=exp.replace(/pi/g,"Math.PI");
+exp=exp.replace(/\^/g,"**");
+
+document.getElementById("display").value=eval(exp);
+
+}
+
 </script>
 
 </body>
-</html>
+  </html>
