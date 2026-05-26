@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMAAR MATH HUB</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#020817;
+background:#020617;
 color:white;
-overflow-x:hidden;
+overflow:hidden;
 }
 
 /* LOADER */
@@ -25,28 +26,28 @@ overflow-x:hidden;
 position:fixed;
 width:100%;
 height:100vh;
-background:#020817;
+background:#020617;
 display:flex;
 justify-content:center;
 align-items:center;
-z-index:9999;
 flex-direction:column;
+z-index:9999;
 }
 
-.loader-circle{
-width:220px;
-height:220px;
+.ring{
+width:250px;
+height:250px;
 border-radius:50%;
-border:6px solid #0ea5e9;
-box-shadow:0 0 50px #2563eb;
+border:5px solid #0ea5e9;
+box-shadow:0 0 60px #2563eb;
 display:flex;
 justify-content:center;
 align-items:center;
-animation:spin 3s linear infinite;
+animation:spin 4s linear infinite;
 }
 
-.loader-circle h1{
-font-size:35px;
+.ring h1{
+font-size:38px;
 text-align:center;
 color:#38bdf8;
 }
@@ -57,8 +58,8 @@ transform:rotate(360deg);
 }
 }
 
-.progress{
-width:250px;
+.bar{
+width:260px;
 height:10px;
 background:#111827;
 margin-top:30px;
@@ -66,22 +67,23 @@ border-radius:20px;
 overflow:hidden;
 }
 
-.progress div{
-width:90%;
+.bar div{
 height:100%;
+width:100%;
 background:#2563eb;
 animation:load 3s linear;
 }
 
 @keyframes load{
 0%{width:0;}
-100%{width:90%;}
+100%{width:100%;}
 }
 
 /* MAIN */
 
 .main{
 display:none;
+height:100vh;
 }
 
 /* TOPBAR */
@@ -94,22 +96,19 @@ align-items:center;
 justify-content:space-between;
 padding:0 20px;
 border-bottom:1px solid #1e293b;
-position:sticky;
-top:0;
-z-index:100;
 }
 
 .logo{
-font-size:28px;
+font-size:30px;
 font-weight:bold;
 color:#38bdf8;
 }
 
 .search{
-width:40%;
+width:35%;
 padding:12px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 background:#111827;
 color:white;
 }
@@ -118,60 +117,57 @@ color:white;
 
 .layout{
 display:flex;
-min-height:calc(100vh - 70px);
+height:calc(100vh - 70px);
 }
 
-/* LEFT SIDEBAR */
+/* SIDEBAR */
 
 .sidebar{
-width:240px;
+width:220px;
 background:#071226;
-padding:20px;
+padding:15px;
+overflow:auto;
 border-right:1px solid #1e293b;
 }
 
-.sidebar h3{
+.sidebar h2{
 margin-bottom:20px;
 color:#38bdf8;
 }
 
-.menu{
-list-style:none;
-}
-
-.menu li{
+.menu div{
 padding:14px;
 margin-bottom:12px;
 background:#111827;
-border-radius:10px;
+border-radius:12px;
 cursor:pointer;
 transition:.3s;
 }
 
-.menu li:hover{
+.menu div:hover{
 background:#2563eb;
 }
 
-/* CONTENT */
+/* CENTER */
 
-.content{
+.center{
 flex:1;
 padding:20px;
+overflow:auto;
 }
 
 /* HERO */
 
 .hero{
 background:linear-gradient(90deg,#1d4ed8,#6d28d9);
-padding:30px;
+padding:25px;
 border-radius:20px;
 margin-bottom:20px;
-box-shadow:0 0 30px #1d4ed8;
+box-shadow:0 0 30px #2563eb;
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:10px;
+font-size:38px;
 }
 
 .stats{
@@ -191,14 +187,14 @@ text-align:center;
 
 /* TOPICS */
 
-.topic-grid{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
 margin-top:20px;
 }
 
-.topic{
+.card{
 background:#0f172a;
 padding:20px;
 border-radius:20px;
@@ -206,19 +202,15 @@ border:1px solid #1e293b;
 transition:.3s;
 }
 
-.topic:hover{
+.card:hover{
 transform:translateY(-5px);
 box-shadow:0 0 20px #2563eb;
 }
 
-.topic h2{
-margin-bottom:10px;
-}
+/* FORMULAS */
 
-/* FORMULA BOX */
-
-.formula-box{
-margin-top:25px;
+.formulas{
+margin-top:20px;
 background:#0f172a;
 padding:20px;
 border-radius:20px;
@@ -226,42 +218,42 @@ border-radius:20px;
 
 .formula{
 padding:12px;
-background:#111827;
 margin-top:10px;
+background:#111827;
 border-radius:10px;
 }
 
 /* CALCULATOR */
 
-.calculator{
-margin-top:25px;
+.calc{
+margin-top:20px;
 background:#0f172a;
 padding:20px;
 border-radius:20px;
 }
 
-.calc-screen{
+#screen{
 width:100%;
 height:60px;
-font-size:28px;
-margin-bottom:15px;
-padding:10px;
-background:#111827;
 border:none;
+background:#111827;
 color:white;
+font-size:28px;
+padding:10px;
 border-radius:10px;
+margin-bottom:15px;
 text-align:right;
 }
 
-.calc-buttons{
+.buttons{
 display:grid;
 grid-template-columns:repeat(5,1fr);
 gap:10px;
 }
 
-.calc-buttons button{
-padding:18px;
-font-size:20px;
+.buttons button{
+padding:16px;
+font-size:18px;
 border:none;
 border-radius:10px;
 background:#1e293b;
@@ -269,16 +261,17 @@ color:white;
 cursor:pointer;
 }
 
-.calc-buttons button:hover{
+.buttons button:hover{
 background:#2563eb;
 }
 
-/* RIGHT SIDEBAR */
+/* RIGHT BAR */
 
 .rightbar{
-width:320px;
+width:300px;
 background:#071226;
-padding:20px;
+padding:15px;
+overflow:auto;
 border-left:1px solid #1e293b;
 }
 
@@ -297,9 +290,9 @@ color:#38bdf8;
 .box input{
 width:100%;
 padding:12px;
+background:#111827;
 border:none;
 border-radius:10px;
-background:#1e293b;
 color:white;
 margin-bottom:10px;
 }
@@ -307,9 +300,9 @@ margin-bottom:10px;
 .box button{
 width:100%;
 padding:12px;
+background:#2563eb;
 border:none;
 border-radius:10px;
-background:#2563eb;
 color:white;
 font-size:16px;
 cursor:pointer;
@@ -327,20 +320,20 @@ min-height:50px;
 
 @media(max-width:1000px){
 
+body{
+overflow:auto;
+}
+
 .layout{
-flex-direction:column;
+width:1400px;
 }
 
-.sidebar,
-.rightbar{
-width:100%;
-}
-
-.search{
-width:55%;
+.main{
+overflow:auto;
 }
 
 }
+
 </style>
 </head>
 
@@ -350,98 +343,117 @@ width:55%;
 
 <div id="loader">
 
-<div class="loader-circle">
+<div class="ring">
 <h1>AMAAR<br>MATH HUB</h1>
 </div>
 
-<div class="progress">
+<div class="bar">
 <div></div>
 </div>
 
 </div>
 
-<!-- MAIN WEBSITE -->
+<!-- MAIN -->
 
 <div class="main" id="main">
-
-<!-- TOPBAR -->
 
 <div class="topbar">
 
 <div class="logo">AMAAR MATH HUB</div>
 
-<input class="search" placeholder="Search formulas, topics, questions...">
+<input class="search" placeholder="Search formulas, topics...">
 
 </div>
 
 <div class="layout">
 
-<!-- LEFT SIDEBAR -->
+<!-- LEFT -->
 
 <div class="sidebar">
 
-<h3>MAIN MENU</h3>
+<h2>MAIN MENU</h2>
 
-<ul class="menu">
-<li>🏠 Dashboard</li>
-<li>📘 Trigonometry</li>
-<li>📗 Algebra</li>
-<li>📕 Geometry</li>
-<li>📙 Mensuration</li>
-<li>📊 Statistics</li>
-<li>🧮 Real Calculator</li>
-<li>📈 Graph Plotter</li>
-</ul>
+<div class="menu">
+
+<div>🏠 Dashboard</div>
+<div>📘 Trigonometry</div>
+<div>📗 Algebra</div>
+<div>📕 Geometry</div>
+<div>📙 Mensuration</div>
+<div>📊 Statistics</div>
+<div>🧮 Real Calculator</div>
+<div>📈 Graph Plotter</div>
 
 </div>
 
-<!-- MAIN CONTENT -->
+</div>
 
-<div class="content">
+<!-- CENTER -->
+
+<div class="center">
 
 <div class="hero">
+
 <h1>Welcome Back, Amaar! 👋</h1>
-<p>Your Ultimate AI Mathematics Learning Platform 🚀</p>
+
+<p>Your Ultimate AI Mathematics Platform 🚀</p>
 
 <div class="stats">
-<div class="stat"><h2>12</h2><p>Topics</p></div>
-<div class="stat"><h2>245</h2><p>Solved</p></div>
-<div class="stat"><h2>98%</h2><p>Accuracy</p></div>
-<div class="stat"><h2>15</h2><p>Day Streak</p></div>
+
+<div class="stat">
+<h2>12</h2>
+<p>Topics</p>
 </div>
+
+<div class="stat">
+<h2>245</h2>
+<p>Solved</p>
+</div>
+
+<div class="stat">
+<h2>98%</h2>
+<p>Accuracy</p>
+</div>
+
+<div class="stat">
+<h2>15</h2>
+<p>Streak</p>
+</div>
+
+</div>
+
 </div>
 
 <!-- TOPICS -->
 
-<div class="topic-grid">
+<div class="grid">
 
-<div class="topic">
+<div class="card">
 <h2>📘 Trigonometry</h2>
-<p>sinθ = opp/hyp</p>
-<p>cosθ = adj/hyp</p>
+<p>sin²θ + cos²θ = 1</p>
 </div>
 
-<div class="topic">
+<div class="card">
 <h2>📗 Algebra</h2>
 <p>(a+b)² = a²+2ab+b²</p>
 </div>
 
-<div class="topic">
+<div class="card">
 <h2>📕 Geometry</h2>
-<p>Area of Circle = πr²</p>
+<p>πr²</p>
 </div>
 
-<div class="topic">
+<div class="card">
 <h2>📙 Mensuration</h2>
 <p>Volume = l×b×h</p>
 </div>
 
-<div class="topic">
+<div class="card">
 <h2>📊 Statistics</h2>
-<p>Mean = Sum / Total</p>
+<p>Mean = Sum/Total</p>
 </div>
 
-<div class="topic">
+<div class="card">
 <h2>📈 Calculus</h2>
 <p>d/dx(x²)=2x</p>
 </div>
@@ -450,7 +462,7 @@ width:55%;
 
 <!-- FORMULAS -->
 
-<div class="formula-box">
+<div class="formulas">
 
 <h2>Quick Formulas</h2>
 
@@ -461,13 +473,13 @@ width:55%;
 
 </div>
 
-<!-- SCIENTIFIC CALCULATOR -->
+<!-- CALCULATOR -->
 
-<div class="calculator">
+<div class="calc">
 
-<input id="screen" class="calc-screen">
+<input id="screen">
 
-<div class="calc-buttons">
+<div class="buttons">
 
 <button onclick="press('sin(')">sin</button>
 <button onclick="press('cos(')">cos</button>
@@ -505,43 +517,33 @@ width:55%;
 
 </div>
 
-<!-- RIGHT SIDEBAR -->
+<!-- RIGHT -->
 
 <div class="rightbar">
 
-<!-- AI SOLVER -->
-
 <div class="box">
 
-<h2>AI Math Solver</h2>
+<h2>AI Solver</h2>
 
-<input id="mathInput" placeholder="Enter your question">
+<input id="mathInput" placeholder="Enter question">
 
 <button onclick="solveMath()">Solve</button>
 
-<div class="answer" id="mathAnswer">
-Answer will appear here...
-</div>
+<div class="answer" id="mathAnswer"></div>
 
 </div>
-
-<!-- AI CHAT -->
 
 <div class="box">
 
 <h2>AI Chat</h2>
 
-<input id="chatInput" placeholder="Type your message">
+<input id="chatInput" placeholder="Type message">
 
 <button onclick="chatAI()">Chat</button>
 
-<div class="answer" id="chatAnswer">
-ChatGPT style answer...
-</div>
+<div class="answer" id="chatAnswer"></div>
 
 </div>
-
-<!-- SMART SEARCH -->
 
 <div class="box">
 
@@ -551,9 +553,7 @@ ChatGPT style answer...
 
 <button onclick="smartSearch()">Search</button>
 
-<div class="answer" id="searchAnswer">
-Search results...
-</div>
+<div class="answer" id="searchAnswer"></div>
 
 </div>
 
@@ -574,8 +574,8 @@ document.getElementById("main").style.display="block";
 
 /* CALCULATOR */
 
-function press(val){
-document.getElementById("screen").value += val;
+function press(v){
+document.getElementById("screen").value+=v;
 }
 
 function clearScreen(){
@@ -598,7 +598,8 @@ exp=exp
 
 try{
 document.getElementById("screen").value=eval(exp);
-}catch{
+}
+catch{
 document.getElementById("screen").value="Error";
 }
 
@@ -612,14 +613,18 @@ let q=document.getElementById("mathInput").value;
 
 let ans="";
 
-if(q.includes("2+2")){
-ans="Answer = 4";
+if(q.includes("+")){
+try{
+ans="Answer = " + eval(q);
+}catch{
+ans="Invalid";
+}
 }
 else if(q.includes("sin")){
-ans="Use trigonometry formulas.";
+ans="sinθ = opposite/hypotenuse";
 }
 else{
-ans="AI Solver is working ✅";
+ans="AI Solver Working ✅";
 }
 
 document.getElementById("mathAnswer").innerHTML=ans;
@@ -633,18 +638,18 @@ function chatAI(){
 let msg=document.getElementById("chatInput").value;
 
 document.getElementById("chatAnswer").innerHTML=
-"AI Reply: " + msg + " 😊";
+"AI Reply: " + msg;
 
 }
 
-/* SMART SEARCH */
+/* SEARCH */
 
 function smartSearch(){
 
-let text=document.getElementById("searchInput").value;
+let s=document.getElementById("searchInput").value;
 
 document.getElementById("searchAnswer").innerHTML=
-"Showing search result for: " + text;
+"Showing results for: " + s;
 
 }
 
